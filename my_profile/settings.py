@@ -78,12 +78,12 @@ WSGI_APPLICATION = 'my_profile.wsgi.application'
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'djongo',
-        'NAME':'NickDavis',
+   'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
-
+# mongodb+srv://nick:<password>@cluster0.atigc.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
