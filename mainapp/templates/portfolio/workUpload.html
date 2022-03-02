@@ -1,0 +1,115 @@
+{% extends 'portfolio/base/base.html' %}
+
+{% block header %}
+      <!-- header
+    ================================================== -->
+    <header class="s-header sticky offset scrolling">
+        <div class="row s-header__nav-wrap">
+            <nav class="s-header__nav">
+                <ul>
+                    <li class="current"><a class="smoothscroll" href="/main/#hero">Home</a></li>
+                    <li><a class="smoothscroll" href="/main/#about">About</a></li>
+                    <li><a class="smoothscroll" href="/main/#resume">Resume</a></li>
+                    <li><a class="smoothscroll" href="/main/#portfolio">Works</a></li>
+                    <li><a class="smoothscroll" href="/main/#testimonials">Testimonials</a></li>
+                    <li><a class="smoothscroll" href="/main/#contact">Say Hello</a></li>
+                </ul>
+            </nav>
+        </div> <!-- end row -->
+        
+        <a class="s-header__menu-toggle" href="#0" title="Menu">
+            <span class="s-header__menu-icon"></span>
+        </a>
+    </header> <!-- end s-header -->
+{% endblock %}
+{% block main %}
+<!-- s-header sticky offset scrolling -->
+
+    <section id="styles" class="s-styles" style="background-color:white;">
+
+        <div class="row">
+            <div class="column large-12 intro">
+
+                <h1>SETINGS.</h1>
+
+                <p class="lead">Welcom to the settings page hear you can upload the work done by you as the admin of the page or the owner of the portfolio set new profile pic etc.
+                </p>
+
+                <hr class="fancy">
+
+                <h3 class="h-add-bottom">Work Form</h3>
+                {% if isSuccess %}
+                    <div class="alert-box alert-box--success">
+                        <p style="color: white; text-align: center; font-size: larger;">{{msg}}</p>
+                        <span class="alert-box__close"></span>
+                    </div><!-- end success -->
+                {% endif %}
+                <div>
+                    <label for="sampleInput">File</label>
+                    <input class="h-full-width file" type="file" id="sampleInput">
+                </div>
+                <form  method="post" action="{% url 'portWork' %}">
+                    {% csrf_token %}
+                    {{form.as_p}}          
+                    <input class="btn--primary h-full-width" type="submit" value="Submit">
+                </form>
+
+            </div>
+
+            <div class="column large-12 intro">
+
+                <h3 class="h-add-bottom">ProfilePic Form</h3>
+                {% if isSuccess2 %}
+                    <div class="alert-box alert-box--success">
+                        <p style="color: white; text-align: center; font-size: larger;">{{msg2}}</p>
+                        <span class="alert-box__close"></span>
+                    </div><!-- end success -->
+                {% endif %}
+                <div>
+                    <label for="sampleInput">File</label>
+                    <input class="h-full-width file2" type="file" id="sampleInput">
+                </div>
+                <form  method="post" action="{% url 'profilepic' %}">
+                    {% csrf_token %}
+                    {{form2.as_p}}          
+                    <input class="btn--primary h-full-width" type="submit" value="Submit">
+                </form>
+
+            </div>
+
+        </div> <!-- end row -->
+    </section>
+    <script>
+        // work
+        let imgs = document.querySelector('.file');
+        let img_string = document.querySelector('.imgsting')
+
+        // profilepic
+        let imgs2 = document.querySelector('.file2');
+        let img_string2 = document.querySelector('.imgsting2')
+
+        const reader = new FileReader()
+        // work
+        imgs.addEventListener('change',e=>{
+            let file = e.target.files[0]
+            reader.readAsDataURL(file)
+            reader.onload = () => {
+                img_string.value = reader.result
+            }
+        })
+
+        // profile
+        imgs2.addEventListener('change',e=>{
+            let file = e.target.files[0]
+            reader.readAsDataURL(file)
+            reader.onload = () => {
+               
+                img_string2.value = reader.result
+            }
+        })
+        
+    
+    
+    
+    </script>
+{% endblock %}

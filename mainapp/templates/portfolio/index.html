@@ -1,0 +1,490 @@
+{% extends 'portfolio/base/base.html' %}
+
+{% load static %}
+
+{% block header %}
+      <!-- header
+    ================================================== -->
+    <header class="s-header">
+        <div class="row s-header__nav-wrap">
+            <nav class="s-header__nav">
+                <ul>
+                    <li class="current"><a class="smoothscroll" href="#hero">Home</a></li>
+                    <li><a class="smoothscroll" href="#about">About</a></li>
+                    <li><a class="smoothscroll" href="#resume">Resume</a></li>
+                    <li><a class="smoothscroll" href="#portfolio">Works</a></li>
+                    <li><a class="smoothscroll" href="#testimonials">Testimonials</a></li>
+                    <li><a class="smoothscroll" href="#contact">Say Hello</a></li>
+                </ul>
+            </nav>
+        </div> <!-- end row -->
+        
+        <a class="s-header__menu-toggle" href="#0" title="Menu">
+            <span class="s-header__menu-icon"></span>
+        </a>
+    </header> <!-- end s-header -->
+{% endblock %}
+
+{% block main %}
+
+    <!-- hero
+    ================================================== -->
+    <section id="hero" class="s-hero target-section">
+
+        <div class="s-hero__bg rellax" data-rellax-speed="-7"></div>
+
+        <div class="row s-hero__content">
+            <div class="column">
+
+                <div class="s-hero__content-about">
+
+                    <h1>I'm Davis Nyakno-abasi.</h1>
+
+                    <h3>
+                    I'm a Nigeria based <span>Software developer</span>, <span>illustrator</span> , <span>Problem Solver</span> and <span>webdesigner</span> creating awesome and
+                    effective visual identities for companies of all sizes around the globe. Let's <a class="smoothscroll" href="#about">start scrolling</a>
+                    and learn more <a class="smoothscroll" href="#about">about me</a>.
+                    </h3>
+
+                    <div class="s-hero__content-social">
+                        <a href="#0"><i class="fab fa-facebook-square" aria-hidden="true"></i></a>
+                        <a href="#0"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                        <a href="#0"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                        <a href="#0"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+                    </div>
+
+                </div> <!-- end s-hero__content-about -->
+
+            </div>
+        </div> <!-- s-hero__content -->
+
+        <div class="s-hero__scroll">
+            <a href="#about" class="s-hero__scroll-link smoothscroll">
+                <span class="scroll-arrow">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill:rgba(0, 0, 0, 1);transform:;-ms-filter:"><path d="M18.707 12.707L17.293 11.293 13 15.586 13 6 11 6 11 15.586 6.707 11.293 5.293 12.707 12 19.414z"></path></svg>
+                </span>
+                <span class="scroll-text">Scroll Down</span>
+            </a>
+        </div> <!-- s-hero__scroll -->
+
+    </section> <!-- end s-hero -->
+
+    <!-- % static 'portfolio/images/avatars/user-06.jpg' % -->
+    <!-- about
+    ================================================== -->
+    <section id="about" class="s-about target-section">
+
+        <div class="row">
+            <div class="column large-3 tab-12">
+                {% for item in profile_pic %}            
+                    <img class="s-about__pic" src="{{item.img_string}}" alt="">
+                {% endfor %}
+                
+            </div>
+            <div class="column large-9 tab-12 s-about__content">
+                <h3>About Me</h3>
+                <p>
+                Hi there! Iam happy you are checking my profile. I'm Davis Nyakno-abasi,
+                a problem solver and Software Developer.
+
+                I'm focoused on the solution, and I work with what best solve the 
+                problem. My programming bases and experience provide such flexibility,
+                so i can work with almost any language or technology as long as they solve
+                the problem in the best way and shortest time posible.
+                
+                I first started my professional career as Freelancer, then work as a Back-End
+                developer, and now with the arival of Flutter I'm also working with Mobile Application
+                Development.
+
+                During this journey, I followed and maintain the Priciples, Concept like DDD,
+                Design Patterns, and Best Practices to Improve the development experience and project
+                maintainability.
+
+                I have previously worked professionally with the following technologies:<br>
+                Javascript (Node.js, React, React Native)<br>
+                Python (Django)<br>
+                C# (.Net Core)<br>
+                Dart (Flutter)
+                and more...<br>
+                Currently residing in Port Harcourt, River's state Nigeria. Im open to remote jobs and
+                relocation.
+                If you would like to know more about me, bellow is my WhatsApp number, let's chat. I would
+                like to hear you
+              
+                </p>
+
+                <hr>
+
+                <div class="row s-about__content-bottom">
+                    <div class="column w-1000-stack">
+                        <h3>Contact Details</h3>
+    
+                        <p>
+                        Nick Davis<br>
+                        River's state, Port Harecourt<br>
+                        Nigeria<br>
+                        <a href="tel:+2349036103607">+234 903 610 3607</a> <br>
+                        <a href="mailto:#0">nyaknodavis318@gmail.com</a>
+                        </p>
+                        
+                    </div>
+                    <div class="column w-1000-stack">
+                        <a href="{% url 'cv' %}" class="btn btn--download">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill:rgba(0, 0, 0, 1);transform:;-ms-filter:"><path d="M12 16L16 11 13 11 13 4 11 4 11 11 8 11z"></path><path d="M20,18H4v-7H2v7c0,1.103,0.897,2,2,2h16c1.103,0,2-0.897,2-2v-7h-2V18z"></path></svg>
+                            Download CV
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- end row -->
+
+    </section> <!-- end s-about -->
+
+
+    <!-- resume
+    ================================================== -->
+    <section id="resume" class="s-resume target-section">
+        
+        <div class="row s-resume__section">
+            <div class="column large-3 tab-12">
+                <h3 class="section-header-allcaps">Career</h3>
+            </div>
+            <div class="column large-9 tab-12">
+                <div class="resume-block">
+
+                    <div class="resume-block__header">
+                        <h4 class="h3">3REEN SHOPE LTD</h4>
+                        <p class="resume-block__header-meta">
+                            <span>Back-End Developer</span> 
+                            <span class="resume-block__header-date">
+                                January 2019 - Present
+                            </span>
+                        </p>
+                    </div>
+
+                    <p>
+                    Working with 3REEN was one of the best thing that happend to me i.e 
+                    it has expose me to lots of tech tools and also gave me big time experience
+                    tech wold.
+                    </p>
+
+                </div> <!-- end resume-block -->
+
+                <div class="resume-block">
+
+                    <div class="resume-block__header">
+                        <h4 class="h3">Freelancer</h4>
+                        <p class="resume-block__header-meta">
+                            <span>Fullstack Dev</span> 
+                            <span class="resume-block__header-date">
+                                August 2017 - July 2019
+                            </span>
+                        </p>
+                    </div>
+
+                    <p>
+                    Being a Freelancer was a good experience, withen the range of Aug 2016 to Jul 2019
+                    i have worked for many sub companies and individual in a short period of time building 
+                    websit and web Application / blogs using some cool tools like React.js Django Node.js etc .
+                    </p>
+
+                </div> <!-- end resume-block -->
+            </div>
+        </div> <!-- s-resume__section -->
+
+
+        <!-- <div class="row s-resume__section">
+            <div class="column large-3 tab-12">
+                <h3 class="section-header-allcaps">Education</h3>
+            </div>
+            <div class="column large-9 tab-12">
+                <div class="resume-block">
+
+                    <div class="resume-block__header">
+                        <h4 class="h3">University of Life</h4>
+                        <p class="resume-block__header-meta">
+                            <span>Master in Graphic Design</span> 
+                            <span class="resume-block__header-date">
+                                April 2015
+                            </span>
+                        </p>
+                    </div>
+
+                    <p>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore 
+                    vero quidem nobis maxime dolorem aliquam quisquam eum ipsum amet. Vitae 
+                    aut atque fuga dolorem. Vel voluptatibus fugiat nam. Impedit aperiam 
+                    nesciunt facilis! Porro architecto dicta inventore tempora ratione quia odio.
+                    </p>
+
+                </div> <!-- end resume-block -->
+
+               <!-- <div class="resume-block">
+
+                    <div class="resume-block__header">
+                        <h4 class="h3">School of Cool Designers</h4>
+                        <p class="resume-block__header-meta">
+                            <span>B.A. Degree in Graphic Design</span> 
+                            <span class="resume-block__header-date">
+                                August 2012
+                            </span>
+                        </p>
+                    </div>
+
+                    <p>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore 
+                    vero quidem nobis maxime dolorem aliquam quisquam eum ipsum amet. Vitae 
+                    aut atque fuga dolorem. Vel voluptatibus fugiat nam. Impedit aperiam 
+                    nesciunt facilis! Porro architecto dicta inventore tempora ratione quia odio.
+                    </p>
+
+                </div> end resume-block -->
+            <!-- </div> -->
+        <!-- </div> s-resume__section -->
+
+
+        <div class="row s-resume__section">
+            <div class="column large-3 tab-12">
+                <h3 class="section-header-allcaps">Skills</h3>
+            </div>
+            <div class="column large-9 tab-12">
+                <div class="resume-block">
+
+                    <p>
+                    Hear are some of the skill i have achived in the past years.
+                    </p>
+
+                    <ul class="skill-bars-fat">
+                        <li>
+                        <div class="progress percent85"></div>
+                        <strong>HTML</strong>
+                        </li>
+                        <li>
+                        <div class="progress percent85"></div>
+                        <strong>CSS</strong>
+                        </li>
+                        <li>
+                        <div class="progress percent90"></div>
+                        <strong>Javascript</strong>
+                        </li>
+                       
+                        <li>
+                        <div class="progress percent90"></div>
+                        <strong>Python</strong>
+                        </li>
+                        <li>
+                        <div class="progress percent70"></div>
+                        <strong>C#</strong>
+                        </li>
+                        <li>
+                        <div class="progress percent90"></div>
+                        <strong>React.js</strong>
+                        </li>
+                        <li>
+                        <li>
+                        <div class="progress percent70"></div>
+                        <strong>Django</strong>
+                        </li>
+                        <li>
+                        <div class="progress percent70"></div>
+                        <strong>Dat(Flutter)</strong>
+                        </li>
+                        <li>
+                        <div class="progress percent90"></div>
+                        <strong>Vue.js</strong>
+                        </li>
+                        <li>
+                        <div class="progress percent90"></div>
+                        <strong>Node.js</strong>
+                        </li>
+                    </ul>
+
+                </div> <!-- end resume-block -->
+
+            </div>
+        </div> <!-- s-resume__section -->
+
+    </section> <!-- end s-resume -->
+
+
+    <!-- portfolio
+    ================================================== -->
+    <section id="portfolio" class="s-portfolio target-section">
+
+        <div class="row s-portfolio__header">
+            <div class="column large-12">
+                <h3>A Few Of My Latest Creations</h3>
+            </div>
+        </div>
+
+        <div class="row collapse block-large-1-4 block-medium-1-3 block-tab-1-2 block-500-stack folio-list">
+            {% for item1 in work_done %}
+
+            <div class="column folio-item">
+                <a href="#{{item1.poper}}" class="folio-item__thumb">
+                    <img src="{{ item1.img_string}}"  alt="">
+                </a>
+            </div> <!-- end folio-item -->
+
+           {% endfor %}
+
+        </div> <!-- end folio-list -->
+
+
+        <!-- Modal Templates Popup
+        =========================================================== -->
+        {% for item2 in work_done %}
+        <div id="{{item2.poper}}" hidden>
+            <div class="modal-popup">
+                <img src="{{ item2.img_string}}" alt="" />
+    
+                <div class="modal-popup__desc">
+                    <h5>{{item2.title}}</h5>
+                    <p>{{item2.description}}.</p>
+                    <ul class="modal-popup__cat">                       
+                        <li>{{item2.tag}}</li>
+                    </ul>
+                </div>
+    
+                <a href="{{item2.project_link}}" class="modal-popup__details">Project link</a>
+            </div>
+        </div> <!-- end modal -->
+        {% endfor %}
+
+
+
+    </section> <!-- end s-portfolio -->
+
+
+    <!-- CTA
+    ================================================== -->
+    <section class="s-cta">
+
+        <div class="row">
+            <div class="column">
+                <h3 class="h2 section-desc">
+                    Need a great reliable web hosting?
+                </h3>
+            </div>
+        </div> <!-- end heading-block -->
+
+        <div class="row cta-content">
+            <div class="column">
+                <p>
+                We highly recommend <a href="https://www.dreamhost.com/r.cgi?287326">DreamHost</a>.
+                Powerful web and Wordpress hosting. Guaranteed.
+                Starting at $2.95 per month.
+                </p>
+
+                <a href="https://www.dreamhost.com/r.cgi?287326" class="btn btn--primary h-full-width">Get Started</a>
+            </div>
+        </div> <!-- end cta-content -->
+
+    </section> <!-- end s-cta -->
+
+
+    <!-- testimonials
+    ================================================== -->
+    <section id="testimonials" class="s-testimonials target-section">
+
+        <div class="s-testimonials__bg"></div>
+
+        <div class="row s-testimonials__header">
+            <div class="column large-12">
+                <h3>Hear What My Clients Says</h3>
+            </div>
+        </div>
+
+        <div class="row s-testimonials__content">
+
+            <div class="column">
+
+                <div class="swiper-container testimonial-slider">
+
+                    <div class="swiper-wrapper">
+                        {% for item3 in testimonial %}
+                        <div class="testimonial-slider__slide swiper-slide">
+                            <div class="testimonial-slider__author">
+                                <img src="{{item3.img_string}}" alt="Author image" class="testimonial-slider__avatar">
+                                <cite class="testimonial-slider__cite">
+                                    <strong>{{item3.Full_Name}}</strong>
+                                    <span>{{item3.Job_Title}}</span>
+                                </cite>
+                            </div>
+                            <p>
+                            {{item3.Comments}}
+                            </p>
+                        </div> <!-- end testimonial-slider__slide -->
+                        {% endfor %}
+                       
+    
+                    </div> <!-- end testimonial slider swiper-wrapper -->
+
+                    <div class="swiper-pagination"></div>
+
+                </div> <!-- end swiper-container -->
+
+            </div> <!-- end column -->
+
+        </div> <!-- end row -->
+
+    </section> <!-- end s-testimonials -->
+
+
+    <!-- contact
+    ================================================== -->
+    <section id="contact" class="s-contact target-section">
+
+        <div class="row s-contact__header">
+            <div class="column large-12">
+                <h3 class="section-header-allcaps">Say Hello</h3>
+            </div>
+        </div>
+
+        <div class="row s-contact__content">
+
+            <div class="column large-7 medium-12">
+
+                <h4 class="huge-text">
+                Have a new project in mind? Let's collaborate and build something awesome. 
+                Let's turn that idea to an even greater product :)
+                </h4>
+
+            </div>
+
+            <div class="column large-4 medium-12">
+
+                <div class="row contact-infos">
+                    <div class="column large-12 medium-6 tab-12">
+                        <div class="contact-block">
+                            <h5 class="contact-block__header">
+                                Email
+                            </h5>
+                            <p class="contact-block__content">
+                                <a class="mailtoui" href="mailto:nyaknodavis318@gmail.com">nyaknodavis318@gmail.com</a>
+                            </p>
+                        </div> <!-- end contact-block -->
+                    </div>
+                    <div class="column large-12 medium-6 tab-12">
+                        <div class="contact-block">
+                            <h5 class="contact-block__header">
+                                Phone
+                            </h5>
+                            <p class="contact-block__content">
+                                <a href="tel:+2349036103607">+234 903 610 3607</a>
+                            </p>
+                        </div> <!-- end contact-block -->
+                    </div>
+
+                    <div class="column large-12">
+                        <a href="mailto:nyaknodavis318@gmail.com" class="mailtoui btn btn--primary h-full-width">Let's Talk</a>
+                    </div>
+                </div> <!-- end contact-infos -->
+
+            </div>
+        </div> <!-- s-contact__content -->
+
+    </section> <!-- end s-contact -->
+    
+
+    {% endblock %}

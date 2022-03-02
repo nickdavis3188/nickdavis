@@ -1,0 +1,76 @@
+{% extends 'portfolio/base/base.html' %}
+
+{% block header %}
+<header class="s-header sticky offset scrolling">
+    <div class="row s-header__nav-wrap">
+        <nav class="s-header__nav">
+            <ul>
+                <li class="current"><a class="smoothscroll" href="/main/#hero">Home</a></li>
+                <li><a class="smoothscroll" href="/main/#about">About</a></li>
+                <li><a class="smoothscroll" href="/main/#resume">Resume</a></li>
+                <li><a class="smoothscroll" href="/main/#portfolio">Works</a></li>
+                <li><a class="smoothscroll" href="/main/#testimonials">Testimonials</a></li>
+                <li><a class="smoothscroll" href="/main/#contact">Say Hello</a></li>
+            </ul>
+        </nav>
+    </div> <!-- end row -->
+    
+    <a class="s-header__menu-toggle" href="#0" title="Menu">
+        <span class="s-header__menu-icon"></span>
+    </a>
+</header> <!-- end s-header -->
+
+{% endblock %}
+<!-- header
+================================================== -->
+{% block main %}
+   
+    <section id="styles" class="s-styles" style="background-color:white;">
+
+        <div class="row">
+
+            <div class="column large-12 intro">
+
+                <h1>TESTIMONIAL.</h1>
+
+                <p class="lead">
+                    Welcom to the Testimonials upload page hear you can complement/rate the portfolio owner by writing some interasting things to encourage the developer..
+                </p>
+
+                <hr class="fancy">
+
+                <h3 class="h-add-bottom">Testimonial Form</h3>
+                <div>
+                    <label for="sampleInput"> Your Picture</label>
+                    <input class="h-full-width file" type="file" id="sampleInput">
+                </div>
+                <form action="{% url 'testimonial'  %}" method="post">
+                    {% csrf_token %}
+                    <div>
+                        {{form.as_p}}
+                    </div>
+                    
+                
+                    <input class="btn--primary h-full-width" type="submit" value="Submit">
+                </form>
+
+            </div>
+
+        </div> <!-- end row -->
+    </section>
+    <script>
+        let imgs = document.querySelector('.file');
+        let img_string = document.querySelector('.imgsting')
+
+        const reader = new FileReader()
+
+        imgs.addEventListener('change',e=>{
+            let file = e.target.files[0]
+            reader.readAsDataURL(file)
+            reader.onload = () => {
+                img_string.value = reader.result
+            }
+        })
+    
+    </script>
+{% endblock %}
